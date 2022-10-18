@@ -46,7 +46,7 @@ jobs:
             g++ --version && 
             gmp_root="$workspace/gmp-v6.2.1-x86_64-posix-seh-rev0-8.1.0" &&
             mpfr_root="$workspace/mpfr-v4.1.0-x86_64-posix-seh-rev0-8.1.0" &&
-            rm $gmp_root/libgmp.la $mpfr_root/libmpfr.la &&
+            rm $gmp_root/lib/libgmp.la $mpfr_root/lib/libmpfr.la &&
             ./configure --with-gmp-include="$gmp_root/include" --with-gmp-lib="$gmp_root/lib" --with-mpfr-include="$mpfr_root/include" --with-mpfr-lib="$mpfr_root/lib" --disable-shared --enable-static --prefix="$(pwd)/${{ env.installationPath }}" &&
             mingw32-make.exe && 
             mingw32-make.exe install
